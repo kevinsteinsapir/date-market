@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_datex, only: %i[new create]
+  before_action :set_datex, only: %i[new create destroy]
 
   def new
     @review = Review.new
@@ -14,14 +14,20 @@ class ReviewsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-end
 
-private
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to datex_path(@datex), notice: "Review deleted successfully"
+  end
 
-def set_datex
-  @datex = Datex.find(params[:datex_id])
-end
+  private
 
-def review_params
-  params.require(:review).permit(:rating, :comment)
+  def set_datex
+    @datex = Datex.find(params[:datex_id])
+  end
+
+  def review_params
+    params.require(:review).permit(:rating, :comment)
+  end
 end
