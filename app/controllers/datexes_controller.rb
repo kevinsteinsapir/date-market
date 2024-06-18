@@ -1,5 +1,4 @@
 class DatexesController < ApplicationController
-  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   before_action :set_datex, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[new create edit update destroy]
 
@@ -15,7 +14,8 @@ class DatexesController < ApplicationController
   end
 
   def create
-    @datex = current_user.datexes.new(datex_params)
+    @datex = Datex.new(datex_params)
+    @datex.user = current_user
     if @datex.save
       redirect_to datex_path(@datex), notice: "Datex created successfully!"
     else
@@ -46,10 +46,6 @@ class DatexesController < ApplicationController
   end
 
   def datex_params
-    params.require(:datex).permit(:title, :content, :visibility, :address, :price, :guests, :category, :user_id)
-  end
-
-  def record_not_found
-    render plain: "404 Not Found", status: 404
+    params.require(:datex).permit(:title, :content, :visibility, :address, :price, :guests, :category)
   end
 end
