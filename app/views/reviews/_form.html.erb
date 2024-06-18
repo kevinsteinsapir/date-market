@@ -1,4 +1,4 @@
-<%= simple_form_for [@datex, @review] do |f| %>
+<%= simple_form_for [datex, review], url: datexes_path do |f| %>
   <%= f.input :rating, collection: 1..5, prompt: "Select a rating" %>
   <%= f.input :comment %>
   <%= f.submit %>

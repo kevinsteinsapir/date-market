@@ -1,2 +1,18 @@
 <h1>Datexes#show</h1>
 <p>Find me in app/views/datexes/show.html.erb</p>
+
+<%= @datex.title  %>
+<%= @datex.content  %>
+<%= @datex.price  %>
+<%= @datex.address  %>
+<%= @datex.category  %>
+<%= @datex.guests  %>
+
+
+<%= "⭐" * @review_average if @review_average%>
+<%= @reviews.each do |review| %>
+  <%= review.comment %>
+  <%= "⭐" * review.rating %>
+<% end %>
+
+<%= link_to "back home", datexes_path %>
