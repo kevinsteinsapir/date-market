@@ -42,10 +42,14 @@ class DatexesController < ApplicationController
   private
 
   def set_datex
-    @datex = Datex.find(params[:id])
+    @datex = current_user.datexes.find(params[:id])
   end
 
   def datex_params
     params.require(:datex).permit(:title, :content, :visibility, :address, :price, :guests, :category, :user_id)
+  end
+
+  def record_not_found
+    render plain: "404 Not Found", status: 404
   end
 end
