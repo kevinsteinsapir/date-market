@@ -1,1 +1,9 @@
-<h2>Reviews Index</h2>
+<div class="container my-3">
+  <h2>Booking Index</h2>
+
+  <ul>
+  <% @bookings.each do |booking| %>
+    <li><%= booking.fecha %></li>
+  <% end %>
+  </ul>
+</div>
