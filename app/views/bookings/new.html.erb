@@ -1,0 +1,9 @@
+<div class="container my-3">
+  <h2>Bookings - NEW</h2>
+
+
+<%= simple_form_for [@datex, @booking], url: datex_bookings_path do |f| %>
+        <%= f.input :fecha %>
+        <%= f.submit "Book", class: 'btn btn-primary' %>
+      <% end %>
+</div>
