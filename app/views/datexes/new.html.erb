@@ -1,0 +1,12 @@
+<h1>Datexes#new</h1>
+<p>Find me in app/views/datexes/new.html.erb</p>
+
+<%= simple_form_for @datex do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%= f.input :guests %>
+  <%= f.input :category, collection: Datex::CATEGORIES %>
+  <%= f.submit %>
+  <% end %>
