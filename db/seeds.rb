@@ -6,9 +6,9 @@ User.destroy_all
 # Seed Users
 User.create!(
   [
-    { email: 'alice@gmail.com', encrypted_password: '123456' },
-    { email: 'bob@gmail.com', encrypted_password: '123456' },
-    { email: 'charlie@gmail.com', encrypted_password: '123456' }
+    { email: 'alice@gmail.com', password: '123456' },
+    { email: 'bob@gmail.com', password: '123456' },
+    { email: 'charlie@gmail.com', password: '123456' }
   ]
 )
 
