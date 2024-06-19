@@ -6,5 +6,12 @@
 <p><strong>Category:</strong> <%= @datex.category %></p>
 <p><strong>Guests:</strong> <%= @datex.guests %></p>
 
+
+<%= "⭐" * @review_average if @review_average%>
+<%= @reviews.each do |review| %>
+  <%= review.comment %>
+  <%= "⭐" * review.rating %>
+<% end %>
+
 <%= link_to 'Edit', edit_datex_path(@datex) %> |
 <%= link_to 'Back', datexes_path %>
