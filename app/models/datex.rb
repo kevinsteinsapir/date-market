@@ -1,6 +1,7 @@
 class Datex < ApplicationRecord
   belongs_to :user
-  CATEGORIES = %w[Category A Category B Category C Category D Category E Category F].freeze
+
+  CATEGORIES = ['Category A', 'Category B', 'Category C', 'Category D', 'Category E', 'Category F'].freeze
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
   geocoded_by :address

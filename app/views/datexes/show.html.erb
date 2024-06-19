@@ -40,7 +40,10 @@
 
   <div class="row mt-4">
     <div class="col-12">
+      <%= link_to 'Book Date', new_datex_booking_path(datex_id: @datex.id) %>
+      <br>
       <%= link_to "Back to Home", datexes_path, class: "btn btn-primary" %>
+
       <%= link_to 'Edit', edit_datex_path(@datex) %> |
       <%= link_to 'Delete', datex_path(@datex),
         method: :delete,
