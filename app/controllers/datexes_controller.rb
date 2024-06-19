@@ -42,7 +42,7 @@ class DatexesController < ApplicationController
   private
 
   def set_datex
-    @datex = current_user.datexes.find(params[:id])
+    @datex = Datex.find(params[:id])
   end
 
   def datex_params
