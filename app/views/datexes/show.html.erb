@@ -12,6 +12,11 @@
   <%= review.comment %>
   <%= "⭐" * review.rating %>
 <% end %>
+<br>
+<%= link_to 'Book Date', new_datex_booking_path(datex_id: @datex.id) %>
+<br>
+<br>
+<br>
 
 <%= link_to 'Edit', edit_datex_path(@datex) %> |
 <%= link_to 'Back', datexes_path %>

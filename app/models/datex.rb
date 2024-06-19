@@ -1,8 +1,8 @@
 class Datex < ApplicationRecord
   belongs_to :user
   CATEGORIES = %w[Category A Category B Category C Category D Category E Category F].freeze
-  has_many :bookings, dependant: :destroy
-  has_many :reviews, dependant: :destroy
+  has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   validates :title, :content, :address, :price, :guests, :category, presence: true
   validates :guests, numericality: { greater_than_or_equal_to: 2 }
   validates :price, numericality: { greater_than_or_equal_to: 0 }

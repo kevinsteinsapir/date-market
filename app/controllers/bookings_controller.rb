@@ -6,7 +6,6 @@ class BookingsController < ApplicationController
   end
 
   def show
-    raise
   end
 
   def new
@@ -32,7 +31,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking.update(booking_params)
-    redirect_to booking_path(booking)
+    redirect_to booking_path(@booking)
   end
 
   def destroy
