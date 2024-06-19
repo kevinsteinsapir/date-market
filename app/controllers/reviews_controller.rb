@@ -7,8 +7,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.datex = @datex
-    if @review.save
+    if @review.save!
       redirect_to datex_path(@datex), notice: "Review created successfully"
     else
       render :new, status: :unprocessable_entity
@@ -28,6 +27,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:rating, :comment)
+    params.require(:review).permit(:rating, :comment, :datex_id, :user_id)
   end
 end
