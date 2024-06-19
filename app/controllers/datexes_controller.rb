@@ -4,6 +4,13 @@ class DatexesController < ApplicationController
 
   def index
     @datexes = Datex.all
+    @markers = @datexes.geocoded.map do |datex|
+      {
+        lat: datex.latitude,
+        lng: datex.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: { datex: datex })
+      }
+    end
   end
 
   def show
