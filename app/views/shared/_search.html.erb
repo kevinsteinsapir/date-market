@@ -1,0 +1,4 @@
+<%= simple_form_for :search, url: datexes_path, method: :get do |f| %>
+  <%= f.input :category, collection: Datex.pluck(:category).uniq, label: 'Category', prompt: 'Select a category' %>
+  <%= f.button :submit, "Search" %>
+<% end %>
