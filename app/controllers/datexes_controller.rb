@@ -14,6 +14,7 @@ class DatexesController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @reviews = Review.where(datex: @datex)
     @review_average = @reviews.average(:rating)
   end

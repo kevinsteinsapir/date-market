@@ -35,6 +35,8 @@
     </div>
   </div>
 
+<%= render "reviews/form", datex: @datex, review: @review %>
+
   <div class="row mt-4">
     <div class="col-12">
       <%= link_to "Back to Home", datexes_path, class: "btn btn-primary" %>
@@ -42,4 +44,3 @@
     </div>
   </div>
 </div>
-
