@@ -3,7 +3,7 @@
 
   <ul>
   <% @bookings.each do |booking| %>
-    <li><%= booking.fecha %></li>
+    <li><%= link_to booking.fecha, booking_path(booking) %></li>
   <% end %>
   </ul>
 </div>
