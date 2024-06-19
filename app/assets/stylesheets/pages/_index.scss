@@ -1,2 +1,30 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.card {
+  border: none; /* Remove the border */
+  border-radius: 10px; /* Add rounded corners if desired */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.card-body {
+  padding: 20px; /* Add some padding for better spacing */
+}
+
+.card-title {
+  font-weight: bold;
+  text-decoration: none; /* Make the title bold */
+}
+
+.card-text {
+  color: #666; /* Customize text color */
+}
+
+a {
+  text-decoration: none;
+}
+
+.map-container {
+  width: 100%;
+  height: 500px;
+}
