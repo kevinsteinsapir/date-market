@@ -1,8 +1,7 @@
 <div class="container my-3">
-  <h2>Bookings - NEW</h2>
+  <h2>Booking - EDIT</h2>
 
-
-<%= simple_form_for [@datex, @booking] do |f| %>
+  <%= simple_form_for @booking do |f| %>
         <%= f.input :fecha %>
         <%= f.submit "Book", class: 'btn btn-primary' %>
       <% end %>
