@@ -1,5 +1,6 @@
 class Datex < ApplicationRecord
   belongs_to :user
+
   CATEGORIES = ['Category A', 'Category B', 'Category C', 'Category D', 'Category E', 'Category F'].freeze
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
