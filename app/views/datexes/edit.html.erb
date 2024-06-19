@@ -1,2 +1,14 @@
-<h1>Datexes#edit</h1>
-<p>Find me in app/views/datexes/edit.html.erb</p>
+<h1>Edit Date</h1>
+
+<%= simple_form_for @datex do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%= f.input :category %>
+  <%= f.input :guests %>
+
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'Back', datex_path(@datex) %>

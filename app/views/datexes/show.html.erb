@@ -1,12 +1,10 @@
-<h1>Datexes#show</h1>
-<p>Find me in app/views/datexes/show.html.erb</p>
+<h1><%= @datex.title %></h1>
 
-<%= @datex.title  %>
-<%= @datex.content  %>
-<%= @datex.price  %>
-<%= @datex.address  %>
-<%= @datex.category  %>
-<%= @datex.guests  %>
+<p><strong>Content:</strong> <%= @datex.content %></p>
+<p><strong>Address:</strong> <%= @datex.address %></p>
+<p><strong>Price:</strong> <%= @datex.price %></p>
+<p><strong>Category:</strong> <%= @datex.category %></p>
+<p><strong>Guests:</strong> <%= @datex.guests %></p>
 
 
 <%= "⭐" * @review_average if @review_average%>
@@ -15,4 +13,5 @@
   <%= "⭐" * review.rating %>
 <% end %>
 
-<%= link_to "back home", datexes_path %>
+<%= link_to 'Edit', edit_datex_path(@datex) %> |
+<%= link_to 'Back', datexes_path %>
