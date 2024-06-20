@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
 
   def show
     @datexes = Datex.all
+    flash[:notice] = session.delete(:notice)
   end
 
   def new
@@ -21,7 +22,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.datex = @datex
     if @booking.save
-      redirect_to datex_path(@datex), notice: 'Date booked!'
+      session[:notice] = 'Date booked!'
+      redirect_to new_datex_booking_payment_path(@datex, @booking)
     else
       render :new, status: :unprocessable_entity
     end

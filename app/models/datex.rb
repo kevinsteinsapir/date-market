@@ -7,8 +7,19 @@ class Datex < ApplicationRecord
                   }
 
   belongs_to :user
+  has_one_attached :photo
 
-  CATEGORIES = ['Category A', 'Category B', 'Category C', 'Category D', 'Category E', 'Category F'].freeze
+  CATEGORIES = [
+    'Romantic',
+    'Sports',
+    'City Tour',
+    'Outdoors',
+    'Friendly',
+    'Restaurants',
+    'Culture',
+    'Fancy',
+    'Other'
+  ].freeze
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
   geocoded_by :address

@@ -7,6 +7,7 @@
     <%= f.input :price %>
     <%= f.input :guests %>
     <%= f.input :category, collection: Datex::CATEGORIES %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit 'Create a Date', class: 'btn btn-primary mt-3'%>
   <% end %>
 </div>
