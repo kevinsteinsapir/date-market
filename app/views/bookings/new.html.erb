@@ -3,9 +3,9 @@
 
 
 <%= simple_form_for [@datex, @booking] do |f| %>
-        <%= f.input :fecha %>
+        <%= f.input :fecha,
+                    as: :string,
+                    input_html: {data: {controller: 'datepicker'}} %>
         <%= f.submit "Book", class: 'btn btn-primary' %>
       <% end %>
 </div>
-
-

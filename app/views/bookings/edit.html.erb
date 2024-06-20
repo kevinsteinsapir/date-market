@@ -2,7 +2,9 @@
   <h2>Booking - EDIT</h2>
 
   <%= simple_form_for @booking do |f| %>
-        <%= f.input :fecha %>
+        <%= f.input :fecha,
+                as: :string,
+                input_html: { data: { controller: 'datepicker'}}  %>
         <%= f.submit "Book", class: 'btn btn-primary' %>
       <% end %>
 </div>
