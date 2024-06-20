@@ -12,7 +12,8 @@ class DatexesController < ApplicationController
       {
         lat: datex.latitude,
         lng: datex.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { datex: datex })
+        info_window_html: render_to_string(partial: "info_window", locals: { datex: datex }),
+        marker_html: render_to_string(partial: "marker", locals: { datex: datex })
       }
     end
   end
