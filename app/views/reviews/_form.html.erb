@@ -3,5 +3,5 @@
   <%= f.input :comment %>
   <%= f.hidden_field :datex_id, value: datex.id %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.submit %>
+  <%= f.submit "Create Review", class: "btn btn-success"%>
 <% end %>

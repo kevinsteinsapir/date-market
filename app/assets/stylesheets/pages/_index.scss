@@ -39,3 +39,27 @@ a {
   height: 200px; /* Adjust height as needed */
   overflow: hidden;
 }
+
+.text-light-grey {
+  color: #c2c2c2; /* Very light grey color */
+}
+
+.text-pink-color {
+  color: #ea0486 !important; /* Very light grey color */
+}
+
+.mr-2 {
+  margin-right: 2px;
+}
+.ml-2 {
+  margin-left: 2px;
+}
+
+.banner {
+  background-color: #ea0486; /* Pink background color */
+  color: #ffffff;
+       /* White text color */
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 10px;      /* Optional: to add rounded corners */
+}
