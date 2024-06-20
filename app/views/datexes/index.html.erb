@@ -2,7 +2,10 @@
     <h5>Choose the perfect date with friends or your special one</h5>
   </div>
 <div class="container">
-  <%= render "shared/categories" %>
+  <div class="d-flex justify-content-between">
+    <%= render "shared/categories" %>
+    <%= render "shared/search_bar" %>
+  </div>
   <div class="row">
     <% @datexes.each do |datex| %>
       <div class="col-md-4">

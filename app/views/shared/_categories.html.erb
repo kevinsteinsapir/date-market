@@ -1,8 +1,10 @@
+<div>
 
-  <h6>Filter by Category</h6>
-  <%= simple_form_for :search, url: datexes_path, method: :get, html: { class: 'form-inline' } do |f| %>
-    <div class="form-group d-flex">
-      <div class="mr-2"><%= f.input :category, collection: Datex.pluck(:category).uniq, label: false, prompt: 'Select a category', input_html: { class: 'form-control' } %></div>
-      <div class="ml-2"><%= f.button :submit, "Filter", class: "btn btn-outline-primary mb-2" %></div>
-    </div>
-  <% end %>
+    <h6>Filter by Category</h6>
+    <%= simple_form_for :search, url: datexes_path, method: :get do |f| %>
+      <div class="form-group d-flex">
+        <div class="mr-2"><%= f.input :category, collection: Datex.pluck(:category).uniq, label: false, prompt: 'Select a category', input_html: { class: 'form-control' } %></div>
+        <div class="ml-2"><%= f.button :submit, "Filter", class: "btn btn-outline-primary mb-2" %></div>
+      </div>
+    <% end %>
+</div>
