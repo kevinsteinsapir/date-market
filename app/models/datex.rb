@@ -1,4 +1,11 @@
 class Datex < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :search,
+                  against: %i[title content address],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
+
   belongs_to :user
   has_one_attached :photo
 
