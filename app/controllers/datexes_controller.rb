@@ -3,11 +3,12 @@ class DatexesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update destroy]
 
   def index
-    if params[:search] && params[:search][:category].present?
-      @datexes = Datex.where(category: params[:search][:category])
-    else
-      @datexes = Datex.all
-    end
+    search_bar
+    # if params[:search] && params[:search][:category].present?
+    #   @datexes = Datex.where(category: params[:search][:category])
+    # else
+    #   @datexes = Datex.all
+    # end
     @markers = @datexes.geocoded.map do |datex|
       {
         lat: datex.latitude,
@@ -62,5 +63,13 @@ class DatexesController < ApplicationController
 
   def datex_params
     params.require(:datex).permit(:title, :content, :visibility, :address, :price, :guests, :category)
+  end
+
+  def search_bar
+    if params[:query].present?
+      @datexes = Datex.search(params[:query])
+    else
+      @datexes = Datex.all
+    end
   end
 end
