@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :datexes do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[new create] do
+      resources :payments, only: %i[new create]
+    end
     resources :reviews, only: %i[new create]
   end
   resources :bookings, except: %i[new create]
