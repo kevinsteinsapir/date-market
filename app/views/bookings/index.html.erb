@@ -3,7 +3,7 @@
 
   <ul>
   <% @bookings.each do |booking| %>
-    <li><%= link_to "#{@datexes.find(booking.id).title} - #{booking.fecha}", booking_path(booking) %></li>
+    <li><%= link_to "#{booking.datex.title} - #{booking.fecha}", booking_path(booking) %></li>
   <% end %>
   </ul>
 </div>
