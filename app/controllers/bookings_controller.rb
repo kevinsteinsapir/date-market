@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.datex = @datex
     if @booking.save
-      redirect_to root_path, notice: 'Date booked!'
+      redirect_to datex_path(@datex), notice: 'Date booked!'
     else
       render :new, status: :unprocessable_entity
     end
