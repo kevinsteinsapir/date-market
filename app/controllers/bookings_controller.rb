@@ -3,9 +3,11 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.all
+    @datexes = Datex.all
   end
 
   def show
+    @datexes = Datex.all
   end
 
   def new

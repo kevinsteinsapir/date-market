@@ -1,11 +1,12 @@
 <div class="container my-3">
   <h2>Bookings - SHOW</h2>
 
-  <%= @booking.fecha %>
+  <%= "#{@datexes.find(@booking.id).title} - #{@booking.fecha}" %>
+
 
 <br>
   <%= link_to 'Edit Booking', edit_booking_path(@booking) %>
   <%= button_to 'Delete Booking', booking_path(@booking), method: :delete %>
-
+<%= link_to 'Back to Bookings', bookings_path(@booking) %>
 
 </div>
