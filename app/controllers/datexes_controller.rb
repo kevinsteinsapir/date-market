@@ -4,11 +4,6 @@ class DatexesController < ApplicationController
 
   def index
     search_bar
-    # if params[:search] && params[:search][:category].present?
-    #   @datexes = Datex.where(category: params[:search][:category])
-    # else
-    #   @datexes = Datex.all
-    # end
     @markers = @datexes.geocoded.map do |datex|
       {
         lat: datex.latitude,
@@ -66,10 +61,8 @@ class DatexesController < ApplicationController
   end
 
   def search_bar
-    if params[:query].present?
-      @datexes = Datex.search(params[:query])
-    else
-      @datexes = Datex.all
-    end
+    @datexes = Datex.all
+    @datexes = @datexes.search(params[:query]) if params[:query].present?
+    @datexes = @datexes.where(category: params[:search][:category]) if params[:search] && params[:search][:category].present?
   end
 end
