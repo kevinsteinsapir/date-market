@@ -61,6 +61,6 @@ class DatexesController < ApplicationController
   end
 
   def datex_params
-    params.require(:datex).permit(:title, :content, :visibility, :address, :price, :guests, :category)
+    params.require(:datex).permit(:title, :content, :visibility, :address, :price, :guests, :category, :photo)
   end
 end
