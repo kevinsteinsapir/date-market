@@ -28,7 +28,7 @@
       </div>
     <% end %>
   </div>
-  <%= link_to "Create a date", new_datex_path, class: "btn btn-primary mt-4 mb-4", data:{turbo_frame: "link"} %>
+  <%= link_to "Create a date", new_datex_path, class: "btn btn-primary mt-4 mb-4", data:{turbo_frame: "link"} if user_signed_in? %>
   <%= turbo_frame_tag "link" %>
    <div class="text-center"><h5>Take a look at our dates worldwide</h5></div>
   <div class="map-container"
