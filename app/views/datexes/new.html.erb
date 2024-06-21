@@ -1,13 +1,15 @@
 <div class="container">
-  <h1 class="mt-3">Create a new Date</h1>
-  <%= simple_form_for @datex do |f| %>
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.input :address %>
-    <%= f.input :price %>
-    <%= f.input :guests %>
-    <%= f.input :category, collection: Datex::CATEGORIES %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit 'Create a Date', class: 'btn btn-primary mt-3'%>
+  <%= turbo_frame_tag "link" do%>
+    <h1 class="mt-3">Create a new Date</h1>
+    <%= simple_form_for @datex do |f| %>
+      <%= f.input :title %>
+      <%= f.input :content %>
+      <%= f.input :address %>
+      <%= f.input :price %>
+      <%= f.input :guests %>
+      <%= f.input :category, collection: Datex::CATEGORIES %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit 'Create a Date', class: 'btn btn-primary mt-3'%>
+    <% end %>
   <% end %>
 </div>

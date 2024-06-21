@@ -1,2 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="image-container">
+  <%= image_tag "date2.jpg", alt: "Date Market Logo", class: "home-logo" %>
+  <div class="dark-overlay"></div>
+  <div class="overlay-content">
+    <h1 class="slogan">Find Your Perfect Date!</h1>
+    <%= link_to 'Get Started', datexes_path, class: 'cta-button' %>
+  </div>
+</div>

@@ -63,3 +63,27 @@ a {
   padding: 10px;
   margin-bottom: 10px;      /* Optional: to add rounded corners */
 }
+
+
+.custom-badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.375rem;
+  color: #fff;
+  background-color: #ea0486; /* Bootstrap info color */
+}
+
+.navbar-logo {
+  width: 150px; /* Adjust the width as needed */
+  height: auto;
+}
+
+h5{
+  margin:3px;
+}

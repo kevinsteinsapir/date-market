@@ -1,0 +1,14 @@
+/* app/assets/stylesheets/_footer.scss */
+.footer-logo {
+  max-width: 200px; /* Adjust the size as needed */
+  height: auto;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #007bff; /* Adjust the hover color as needed */
+}
