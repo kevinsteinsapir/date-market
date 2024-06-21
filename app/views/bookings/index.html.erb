@@ -1,23 +1,25 @@
-  <h2>Booking Index</h2>
+<h2>Booking Index</h2>
 <div class="container my-3">
   <div class="row">
     <% @bookings.each do |booking| %>
-      <div class="col-md-4">
-        <div class="card mt-3 shadow-sm fixed-height-card">
-      <div>
-        <h4><%= link_to "#{booking.fecha}", booking_path(booking), class: "text-pink-color" %></h4>
-        </div>
+      <div class="col-12">
+        <div class="card mt-3 shadow-sm d-flex flex-row fixed-height-card">
           <% if booking.datex.photo.attached? %>
-            <div class="card-img-top fixed-image-height"><%= image_tag booking.datex.photo, class: "rounded-top img-fluid card-image" %></div>
+            <div class="card-img-left fixed-image-height"><%= image_tag booking.datex.photo, class: "rounded-left img-fluid card-image" %></div>
           <% else %>
-            <div class="card-img-top fixed-image-height"><%= image_tag "date2.png", class: "rounded-top img-fluid card-image" %></div>
+            <div class="card-img-left fixed-image-height"><%= image_tag "date2.png", class: "rounded-left img-fluid card-image" %></div>
           <% end %>
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title px-1 m-0"><%= link_to booking.datex.title, datex_path(booking.datex), class: "text-pink-color" %></h5>
-            <p class="px-1 text-light-grey"><%=booking.datex.category %></p>
-            <div class="d-flex justify-content-start mt-auto">
-            <div class="fas fa-dollar-sign p-1"> <%=booking.datex.price %></div>
-            <div class="fas fa-users p-1"> <%= booking.datex.guests %></div>
+          <div class="card-body d-flex flex-column flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center">
+
+            </div>
+            <h5 class="card-title m-0"><%= link_to booking.datex.title, datex_path(booking.datex), class: "text-pink-color" %></h5>
+            <p class="m-0"><%= link_to booking.fecha, booking_path(booking), class: "text-pink-color" %></>
+            <p class="text-light-grey"><%= booking.datex.category %></p>
+             <%= button_to 'Delete Booking', booking_path(booking), method: :delete, class: "btn btn-danger text-white btn-sm" %>
+            <div class="d-flex justify-content-between mt-auto">
+              <div class="p-1"><i class="fas fa-dollar-sign"></i> <%= booking.datex.price %></div>
+              <div class="p-1"><i class="fas fa-users"></i> <%= booking.datex.guests %></div>
             </div>
           </div>
         </div>

@@ -1,6 +1,9 @@
-<%= simple_form_for :payment, url: datex_booking_payments_path(@datex, @booking), method: :post do |f| %>
-  <%= f.input :card_number, label: 'Card Number' %>
-  <%= f.input :expiration_date, label: 'Expiration Date', as: :date, start_year: Date.today.year, end_year: Date.today.year + 10, discard_day: true, order: [:month, :year] %>
-  <%= f.input :cvv, label: 'CVV', input_html: { type: 'number', maxlength: 3 } %>
-  <%= f.button :submit, "Process Payment" %>
-<% end %>
+<div class="container">
+<h3 class="mt-3">Please Provide your payment information</h3>
+  <%= simple_form_for :payment, url: datex_booking_payments_path(@datex, @booking), method: :post do |f| %>
+    <%= f.input :card_number, label: 'Card Number' %>
+    <%= f.input :expiration_date, label: 'Expiration Date', as: :date, start_year: Date.today.year, end_year: Date.today.year + 10, discard_day: true, order: [:month, :year] %>
+    <%= f.input :cvv, label: 'CVV', input_html: { type: 'number', maxlength: 3 } %>
+    <%= f.button :submit, "Process Payment", class: "btn btn-primary" %>
+  <% end %>
+</div>
