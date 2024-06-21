@@ -12,7 +12,7 @@
       <div class="col-md-4">
         <div class="card mt-3 shadow-sm fixed-height-card">
           <% if datex.photo.attached? %>
-            <div class="card-img-top fixed-image-height"><%= cl_image_tag datex.photo.key, class: "rounded-top img-fluid card-image" %></div>
+            <div class="card-img-top fixed-image-height"><%= image_tag datex.photo.key, class: "rounded-top img-fluid card-image" %></div>
           <% else %>
             <div class="card-img-top fixed-image-height"><%= image_tag "date2.png", class: "rounded-top img-fluid card-image" %></div>
           <% end %>

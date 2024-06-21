@@ -5,7 +5,7 @@
         <div class="card-body">
           <h3 class="card-title text-pink-color"><%= @datex.title %></h3>
           <% if @datex.photo.attached? %>
-            <div class="mt-3 mb-3"><%= cl_image_tag @datex.photo.key, height: 300, width: 400, crop: :fill %></div>
+            <div class="mt-3 mb-3"><%= image_tag @datex.photo, height: 300, width: 400, crop: :fill %></div>
           <% else %>
             <div class="mt-3 mb-3"><%= image_tag "date2.png", height: 300, width: 400, crop: :fill %></div>
           <% end %>
