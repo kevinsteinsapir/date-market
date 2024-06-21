@@ -34,7 +34,7 @@ class DatexesController < ApplicationController
     @datex = Datex.new(datex_params)
     @datex.user = current_user
     if @datex.save
-      redirect_to datex_path(@datex), notice: "Datex created successfully!"
+      redirect_to datex_path(@datex)
     else
       render :new, status: :unprocessable_entity
     end
@@ -45,7 +45,7 @@ class DatexesController < ApplicationController
 
   def update
     if @datex.update(datex_params)
-      redirect_to datex_path(@datex), notice: "Datex updated successfully!"
+      redirect_to datex_path(@datex)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -53,7 +53,7 @@ class DatexesController < ApplicationController
 
   def destroy
     @datex.destroy
-    redirect_to datexes_path, notice: "Datex deleted successfully!"
+    redirect_to datexes_path
   end
 
   private
