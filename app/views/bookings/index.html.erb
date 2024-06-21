@@ -1,9 +1,27 @@
-<div class="container my-3">
   <h2>Booking Index</h2>
-
-  <ul>
-  <% @bookings.each do |booking| %>
-    <li><%= link_to "#{booking.datex.title} - #{booking.fecha}", booking_path(booking) %></li>
-  <% end %>
-  </ul>
+<div class="container my-3">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-md-4">
+        <div class="card mt-3 shadow-sm fixed-height-card">
+      <div>
+        <h4><%= link_to "#{booking.fecha}", booking_path(booking), class: "text-pink-color" %></h4>
+        </div>
+          <% if booking.datex.photo.attached? %>
+            <div class="card-img-top fixed-image-height"><%= cl_image_tag booking.datex.photo.key, class: "rounded-top img-fluid card-image" %></div>
+          <% else %>
+            <div class="card-img-top fixed-image-height"><%= image_tag "date2.png", class: "rounded-top img-fluid card-image" %></div>
+          <% end %>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title px-1 m-0"><%= link_to booking.datex.title, datex_path(booking.datex), class: "text-pink-color" %></h5>
+            <p class="px-1 text-light-grey"><%=booking.datex.category %></p>
+            <div class="d-flex justify-content-start mt-auto">
+            <div class="fas fa-dollar-sign p-1"> <%=booking.datex.price %></div>
+            <div class="fas fa-users p-1"> <%= booking.datex.guests %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
